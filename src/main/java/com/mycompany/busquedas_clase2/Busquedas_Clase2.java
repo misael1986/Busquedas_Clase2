@@ -11,19 +11,24 @@ public class Busquedas_Clase2 {
 
     public static void main(String[] args) {
 
-        int[] misNumeros = new int[20];
+        int[] numeros = new int[10];//CREACION ARREGLO
 
-//        for (int i = 0; i < misNumeros.length; i++) {
-//            misNumeros[i] = (int) (Math.random() * 100);
-//        }
-//
-//        Imprimir(misNumeros);
-//        System.out.println("Burbuja:");
-//        Imprimir(Burbuja(misNumeros));
-//        Imprimir(Seleccion(misNumeros));
-//        Imprimir(Insercion(misNumeros));
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = (int) (Math.random() * 100);//RANDOM NUMEROS ALEATORIOS
+        }
+
+//        Imprimir(numeros);
+//        System.out.println("Burbuja:");//UTF-8  -  Codificación UNICODE
+//        Imprimir(Burbuja(numeros));
+//        System.out.println("Selecci\u00F3n:");
+//        Imprimir(Seleccion(numeros));
+//        System.out.println("Inserción:");
+//        Imprimir(Insercion(numeros));
 
 
+
+
+        int[] misNumeros = new int[20]; 
 
         misNumeros[0] = 10;
         misNumeros[1] = 13;
@@ -48,10 +53,10 @@ public class Busquedas_Clase2 {
 
         System.out.println("Busqueda Lineal\n");
 
-        int resultadoLineal = busquedaBinaria(misNumeros, 37);
+        int resultadoLineal = busquedaLineal(misNumeros, 37);
         System.out.println("El número 37 está en la posición: " + resultadoLineal);
 
-        resultadoLineal = busquedaBinaria(misNumeros, 70);
+        resultadoLineal = busquedaLineal(misNumeros, 70);
         System.out.println("El número 70 está en la posición: " + resultadoLineal);
 
         System.out.println("Busqueda Binaria\n");
@@ -104,8 +109,8 @@ public class Busquedas_Clase2 {
     //----------------------------
     //----------------------------  
     public static int[] Insercion(int A[]) {
-        int p, j;
-        int aux;
+        int p, j;//posiciones  - Si o Si enteras
+        int aux;//Nodo
         for (p = 1; p < A.length; p++) { // desde el segundo elemento hasta
             aux = A[p];           // el final, guardamos el elemento y
             j = p - 1;            // empezamos a comprobar con el anterior
@@ -122,7 +127,7 @@ public class Busquedas_Clase2 {
     //----------------------------
     //----------------------------
     public static int busquedaBinaria(int[] items, int numeroBuscado) {
-        int result = -1;
+        int result = -1;//Bandera
         int limiteInferior = 0;
         int limiteSuperior = items.length - 1;
         int indice;
@@ -146,7 +151,7 @@ public class Busquedas_Clase2 {
     //----------------------------
     //----------------------------
     public static int busquedaLineal(int[] items, int numeroBuscado) {
-        int result = -1;
+        int result = -1;//Bandera
         for (int i = 0; i < items.length - 1; i++) {
 
             if (items[i] == numeroBuscado) {
